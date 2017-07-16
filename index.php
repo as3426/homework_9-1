@@ -19,8 +19,32 @@ switch ($action) {
          ************************************************/
         // 1. make sure the user enters a name
         // 2. display the name with only the first letter capitalized
+*/
 
-        /*************************************************
+	$name=trim($name);
+	$email=trim($email);
+	$phone=trim($phone);
+ // validate name
+         if (empty($name)) {
+	             $message = 'You must enter a name.';
+		                 break;
+	 }
+	// capitalize the first letters only
+	        $name = strtolower($name);
+		$name = ucwords($name);
+ // get first name from complete name
+         $i = strpos($name, ' ');
+	         if ($i === false)
+		 {
+		  $first_name = $name;
+		 }
+		 else {
+		 $first_name = substr($name, 0, $i);
+		       }
+
+
+
+/*        /*************************************************
          * validate and process the email address
          ************************************************/
         // 1. make sure the user enters an email

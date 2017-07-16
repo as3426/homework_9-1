@@ -49,8 +49,26 @@ switch ($action) {
          ************************************************/
         // 1. make sure the user enters an email
         // 2. make sure the email address has at least one @ sign and one dot character
+*/
+         // validate email
+         if (empty($email))
+	 {
+	             $message = 'You must enter an email address.';
+	              break;
+	 }
+	 else if(strpos($email, '@') === false) 
+	 {
+	     $message = 'The email address must contain an @ sign.';
+         	break;
+	 }  
+            else if(strpos($email, '.') === false) {
+            $message = 'The email address must contain a dot character.';
+	                break;
+			        }
 
-        /*************************************************
+
+
+/*        /*************************************************
          * validate and process the phone number
          ************************************************/
         // 1. make sure the user enters at least seven digits, not including formatting characters
